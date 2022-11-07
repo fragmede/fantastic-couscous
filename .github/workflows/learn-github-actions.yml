@@ -1,13 +1,8 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: build-hello
+run-name: Building hello by ${{ github.actor }}
 on: [push]
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  build-the-thing:
+    runs-on: macos-12
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: pyinstaller --onefile hello.py
