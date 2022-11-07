@@ -8,6 +8,7 @@ jobs:
       - name: Make sure we're on OSX
         run: uname -a
       - name: Run the thing
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
         run: python hello.py
