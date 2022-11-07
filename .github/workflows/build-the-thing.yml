@@ -9,6 +9,7 @@ jobs:
         uses: pyinstaller/pyinstaller
         with:
           python-version: '3.x'
+        run: uname -a
       #- run: pip3 install pyinstaller
       - name: build
         run: pyinstaller --onefile hello.py
