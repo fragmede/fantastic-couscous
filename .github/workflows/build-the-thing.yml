@@ -5,6 +5,7 @@ jobs:
   build-the-thing:
     runs-on: ubuntu-latest #macos-12
     steps:
+      - uses: actions/checkout@v3
       - name: Make sure we're on OSX
         run: uname -a
       - name: Run the thing
