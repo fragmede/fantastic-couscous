@@ -5,11 +5,11 @@ jobs:
   build-the-thing:
     runs-on: macos-12
     steps:
+      - run: uname -a
       - name: install deps
         uses: pyinstaller/pyinstaller
         with:
           python-version: '3.x'
-        run: uname -a
       #- run: pip3 install pyinstaller
       - name: build
         run: pyinstaller --onefile hello.py
