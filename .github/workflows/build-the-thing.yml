@@ -8,7 +8,7 @@ jobs:
       - name: Make sure we're on OSX
         run: uname -a
       - uses: actions/checkout@v3
-      - name: Run the thing
+      - name: Choose Python3
         uses: actions/setup-python@v3
         with:
           python-version: '3.x'
