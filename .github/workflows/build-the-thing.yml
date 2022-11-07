@@ -14,4 +14,8 @@ jobs:
           python-version: '3.x'
       - run: pip install pyinstaller
       - run: pyinstaller --onefile hello.py
-
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: hello
+          path: dist/hello
