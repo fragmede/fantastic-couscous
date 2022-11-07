@@ -1,5 +1,5 @@
 name: build-hello
-run-name: Building hello by ${{ github.actor }}
+run-name: Building ${{ github.project }} by ${{ github.actor }}
 on: [push]
 jobs:
   build-the-thing:
