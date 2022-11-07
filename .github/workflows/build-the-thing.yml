@@ -6,4 +6,5 @@ jobs:
     runs-on: macos-12
     steps:
       - run: pip3 install pyinstaller
+      - run: ls /Library/Frameworks/Python.framework/Versions/3.11/bin/
       - run: pyinstaller --onefile hello.py
