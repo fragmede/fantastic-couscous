@@ -7,3 +7,5 @@ jobs:
     steps:
       - name: Make sure we're on OSX
         run: uname -a
+      - name: Run the thing
+        run: python hello.py
