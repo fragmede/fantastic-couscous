@@ -5,4 +5,5 @@ jobs:
   build-the-thing:
     runs-on: macos-12
     steps:
+      - run: pip install pyinstaller
       - run: pyinstaller --onefile hello.py
