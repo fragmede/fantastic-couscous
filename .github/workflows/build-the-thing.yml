@@ -2,8 +2,30 @@ name: build-hello
 run-name: Building ${{ github.project }} by ${{ github.actor }}
 on: [push]
 jobs:
-  build-the-thing:
+  ubuntu-build:
     runs-on: ubuntu-latest #macos-12
+    steps:
+      - name: Make sure we're on OSX
+        run: uname -a
+      - uses: actions/checkout@v3
+      - name: Choose Python3
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - run: pip install pyinstaller
+      - run: pyinstaller --onefile hello.py
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: hello
+          path: dist/hello
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/hello
+  osx-build:
+    runs-on: macos-12
     steps:
       - name: Make sure we're on OSX
         run: uname -a
