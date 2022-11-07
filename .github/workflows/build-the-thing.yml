@@ -5,6 +5,5 @@ jobs:
   build-the-thing:
     runs-on: macos-12
     steps:
-      - uses: pyinstaller/pyinstaller
       - name: Make sure we're on OSX
         run: uname -a
