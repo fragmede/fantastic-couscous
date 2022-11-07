@@ -5,9 +5,9 @@ jobs:
   build-the-thing:
     runs-on: ubuntu-latest #macos-12
     steps:
-      - uses: actions/checkout@v3
       - name: Make sure we're on OSX
         run: uname -a
+      - uses: actions/checkout@v3
       - name: Run the thing
         uses: actions/setup-python@v3
         with:
