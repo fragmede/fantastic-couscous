@@ -3,7 +3,7 @@ run-name: Building ${{ github.project }} by ${{ github.actor }}
 on: [push]
 jobs:
   build-the-thing:
-    runs-on: macos-12
+    runs-on: ubuntu-latest #macos-12
     steps:
       - name: Make sure we're on OSX
         run: uname -a
