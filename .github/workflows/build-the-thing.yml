@@ -12,6 +12,6 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.x'
-      - uses: pyinstaller/pyinstaller@v5.6.2
-      - run: python hello.py
+      - run: pip install pyinstaller
+      - run: pyinstaller --onefile hello.py
 
