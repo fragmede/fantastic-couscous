@@ -8,4 +8,6 @@ jobs:
       - name: Make sure we're on OSX
         run: uname -a
       - name: Run the thing
+        with:
+          python-version: '3.x'
         run: python hello.py
